@@ -91,4 +91,8 @@ public class GameManager {
         System.out.println("if you want to continue enter 1, to terminate enter 2");
     }
 
+    public void inputCmd(int cmd){
+        data.setCmd(cmd);
+    }
+
 }
