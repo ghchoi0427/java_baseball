@@ -5,7 +5,7 @@ import java.util.*;
 public class GameManager {
     public Data data = new Data();
 
-    public void printInput(){
+    public void printInput() {
         System.out.print("input number : ");
     }
 
@@ -13,9 +13,7 @@ public class GameManager {
         List<Integer> target = new ArrayList<>();
         int temp;
 
-        target.add(RandomUtils.nextInt(1, 9));
-
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             do {
                 temp = RandomUtils.nextInt(1, 9);
             } while (target.contains(temp));
