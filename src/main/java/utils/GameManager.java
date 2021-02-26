@@ -76,7 +76,7 @@ public class GameManager {
         String line = "";
 
         if (data.getBall() != 0) {
-            line += data.getBall() + "ball";
+            line += data.getBall() + "ball ";
         }
 
         if (data.getStrike() != 0) {
