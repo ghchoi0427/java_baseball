@@ -83,6 +83,10 @@ public class GameManager {
             line += data.getStrike() + "strike";
         }
 
+        if(data.getStrike()==0 && data.getBall()==0){
+            line+="nothing";
+        }
+
         System.out.println(line);
     }
 
