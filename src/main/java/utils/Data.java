@@ -1,12 +1,13 @@
 package utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Data {
 
-    List<Integer> target;
-    List<Integer> shot;
-    int cmd;
+    List<Integer> target = new ArrayList<>();
+    List<Integer> shot = new ArrayList<>();
+    int cmd = 0;
 
     public List<Integer> getTarget() {
         return target;
