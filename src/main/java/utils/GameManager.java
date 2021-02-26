@@ -92,6 +92,9 @@ public class GameManager {
     }
 
     public void inputCmd(int cmd){
+        if(cmd != 1 && cmd !=2){
+            throw new IllegalArgumentException();
+        }
         data.setCmd(cmd);
     }
 
