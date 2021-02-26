@@ -35,4 +35,21 @@ public class GameManager {
 
         data.setShot(shot);
     }
+
+    public void judge() {
+        List<Integer> shot = data.getShot();
+        List<Integer> target = data.getTarget();
+        int ball = 0;
+        int strike = 0;
+
+        for (int i = 0; i < target.size(); i++) {
+            for(int j=0;j<shot.size();j++){
+                ball += countBall(target.get(i),i,shot.get(j),j);
+                strike += countStrike(target.get(i),i,shot.get(j),j);
+            }
+        }
+
+        data.setBall(ball);
+        data.setStrike(strike);
+    }
 }
