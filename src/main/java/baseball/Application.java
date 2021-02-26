@@ -14,7 +14,7 @@ public class Application {
         do {
             gm.generateTarget();
             do {
-                System.out.print("input number : ");
+                gm.printInput();
                 gm.inputShot(scanner.nextInt());
                 gm.clearScore();
                 gm.judge();
