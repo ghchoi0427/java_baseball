@@ -6,7 +6,8 @@ import java.util.Random;
 
 public class GameManager {
 
-    public List<Integer> generateTarget() {
+    Data data = new Data();
+    public void generateTarget() {
         List<Integer> target = new ArrayList<>();
         int temp;
 
@@ -19,7 +20,7 @@ public class GameManager {
             target.add(temp);
         }
 
-        return target;
+        data.setTarget(target);
     }
 
 
