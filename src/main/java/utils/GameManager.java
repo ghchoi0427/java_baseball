@@ -91,7 +91,7 @@ public class GameManager {
         System.out.println(line);
     }
 
-    public void gameSet() {
+    public void printGameSet() {
         System.out.println("You got all 3 numbers correct! game set");
         System.out.println("if you want to continue enter 1, to terminate enter 2");
     }

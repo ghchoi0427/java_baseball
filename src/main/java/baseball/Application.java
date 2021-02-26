@@ -20,7 +20,7 @@ public class Application {
                 gm.judge();
                 gm.printScore();
             } while (data.getStrike() != 3);
-            gm.gameSet();
+            gm.printGameSet();
             gm.inputCmd(scanner.nextInt());
         } while (data.getCmd() != 2);
     }
