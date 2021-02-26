@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class GameManager {
 
-    Data data = new Data();
+    public Data data = new Data();
     public void generateTarget() {
         List<Integer> target = new ArrayList<>();
         int temp;
