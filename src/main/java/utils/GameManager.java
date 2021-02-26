@@ -3,7 +3,6 @@ package utils;
 import java.util.*;
 
 public class GameManager {
-
     public Data data = new Data();
 
     public void generateTarget() {
@@ -53,15 +52,15 @@ public class GameManager {
         data.setStrike(strike);
     }
 
-    int countBall(int target, int targetIdx, int shot, int shotidx) {
-        if (targetIdx != shotidx && target == shot) {
+    int countBall(int target, int targetIdx, int shot, int shotIdx) {
+        if (targetIdx != shotIdx && target == shot) {
             return 1;
         }
         return 0;
     }
 
-    int countStrike(int target, int targetIdx, int shot, int shotidx) {
-        if (targetIdx == shotidx && target == shot) {
+    int countStrike(int target, int targetIdx, int shot, int shotIdx) {
+        if (targetIdx == shotIdx && target == shot) {
             return 1;
         }
         return 0;
@@ -83,23 +82,22 @@ public class GameManager {
             line += data.getStrike() + "strike";
         }
 
-        if(data.getStrike()==0 && data.getBall()==0){
-            line+="nothing";
+        if (data.getStrike() == 0 && data.getBall() == 0) {
+            line += "nothing";
         }
 
         System.out.println(line);
     }
 
-    public void gameSet(){
+    public void gameSet() {
         System.out.println("You got all 3 numbers correct! game set");
         System.out.println("if you want to continue enter 1, to terminate enter 2");
     }
 
-    public void inputCmd(int cmd){
-        if(cmd != 1 && cmd !=2){
+    public void inputCmd(int cmd) {
+        if (cmd != 1 && cmd != 2) {
             throw new IllegalArgumentException();
         }
         data.setCmd(cmd);
     }
-
 }
