@@ -43,9 +43,9 @@ public class GameManager {
         int strike = 0;
 
         for (int i = 0; i < target.size(); i++) {
-            for(int j=0;j<shot.size();j++){
-                ball += countBall(target.get(i),i,shot.get(j),j);
-                strike += countStrike(target.get(i),i,shot.get(j),j);
+            for (int j = 0; j < shot.size(); j++) {
+                ball += countBall(target.get(i), i, shot.get(j), j);
+                strike += countStrike(target.get(i), i, shot.get(j), j);
             }
         }
 
@@ -53,23 +53,37 @@ public class GameManager {
         data.setStrike(strike);
     }
 
-    int countBall(int target, int targetIdx, int shot, int shotidx){
-        if(targetIdx!=shotidx && target == shot){
+    int countBall(int target, int targetIdx, int shot, int shotidx) {
+        if (targetIdx != shotidx && target == shot) {
             return 1;
         }
         return 0;
     }
 
-    int countStrike(int target, int targetIdx, int shot, int shotidx){
-        if(targetIdx==shotidx && target == shot){
+    int countStrike(int target, int targetIdx, int shot, int shotidx) {
+        if (targetIdx == shotidx && target == shot) {
             return 1;
         }
         return 0;
     }
 
-    public void clearScore(){
+    public void clearScore() {
         data.setBall(0);
         data.setStrike(0);
+    }
+
+    public void printScore() {
+        String line = "";
+
+        if (data.getBall() != 0) {
+            line += data.getBall() + "ball";
+        }
+
+        if (data.getStrike() != 0) {
+            line += data.getStrike() + "strike";
+        }
+
+        System.out.println(line);
     }
 
 }
