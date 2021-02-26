@@ -43,8 +43,8 @@ public class GameManager {
         int ball = 0;
         int strike = 0;
 
-        for (int i = 0; i < target.size(); i++) {
-            for (int j = 0; j < shot.size(); j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 ball += countBall(target.get(i), i, shot.get(j), j);
                 strike += countStrike(target.get(i), i, shot.get(j), j);
             }
