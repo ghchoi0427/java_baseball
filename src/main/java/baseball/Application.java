@@ -17,7 +17,7 @@ public class Application {
                 gm.printInput();
                 gm.inputShot(scanner.nextInt());
                 gm.clearScore();
-                gm.judge();
+                gm.setScore();
                 gm.printScore();
             } while (data.getStrike() != 3);
             gm.printGameSet();

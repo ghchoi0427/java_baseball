@@ -37,7 +37,7 @@ public class GameManager {
         data.setShot(shot);
     }
 
-    public void judge() {
+    public void setScore() {
         List<Integer> shot = data.getShot();
         List<Integer> target = data.getTarget();
         int ball = 0;
