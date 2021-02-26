@@ -1,12 +1,11 @@
 package utils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class GameManager {
 
     public Data data = new Data();
+
     public void generateTarget() {
         List<Integer> target = new ArrayList<>();
         int temp;
@@ -23,5 +22,17 @@ public class GameManager {
         data.setTarget(target);
     }
 
+    public void inputShot(int input) {
+        List<Integer> shot = new ArrayList<>();
 
+        if ((int) (Math.log10(input) + 1) != 3) {
+            throw new IllegalArgumentException();
+        }
+
+        shot.add(input / 100);
+        shot.add((input / 10) % 10);
+        shot.add(input % 10);
+
+        data.setShot(shot);
+    }
 }
