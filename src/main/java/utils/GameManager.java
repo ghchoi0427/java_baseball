@@ -52,4 +52,12 @@ public class GameManager {
         data.setBall(ball);
         data.setStrike(strike);
     }
+
+    int countBall(int target, int targetIdx, int shot, int shotidx){
+        if(targetIdx!=shotidx && target == shot){
+            return 1;
+        }
+        return 0;
+    }
+
 }
