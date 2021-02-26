@@ -7,8 +7,7 @@ public class Data {
 
     List<Integer> target = new ArrayList<>();
     List<Integer> shot = new ArrayList<>();
-    int cmd = 0;
-
+    int cmd;
     int ball;
     int strike;
 
