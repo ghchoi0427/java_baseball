@@ -2,6 +2,7 @@ package baseball;
 
 import utils.Data;
 import utils.GameManager;
+
 import java.util.Scanner;
 
 public class Application {
@@ -21,9 +22,9 @@ public class Application {
                 gm.judge();
                 gm.printScore();
             } while (data.getStrike() != 3);
-                gm.gameSet();
-                int cmd = scanner.nextInt();
-                gm.inputCmd(cmd);
+            gm.gameSet();
+            int cmd = scanner.nextInt();
+            gm.inputCmd(cmd);
 
         } while (data.getCmd() != 2);
     }
