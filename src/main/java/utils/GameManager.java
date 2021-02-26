@@ -60,4 +60,11 @@ public class GameManager {
         return 0;
     }
 
+    int countStrike(int target, int targetIdx, int shot, int shotidx){
+        if(targetIdx==shotidx && target == shot){
+            return 1;
+        }
+        return 0;
+    }
+
 }
