@@ -5,6 +5,10 @@ import java.util.*;
 public class GameManager {
     public Data data = new Data();
 
+    public void printInput(){
+        System.out.print("input number : ");
+    }
+
     public void generateTarget() {
         List<Integer> target = new ArrayList<>();
         int temp;
