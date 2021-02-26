@@ -9,6 +9,25 @@ public class Data {
     List<Integer> shot = new ArrayList<>();
     int cmd = 0;
 
+    int ball;
+    int strike;
+
+    public int getBall() {
+        return ball;
+    }
+
+    public void setBall(int ball) {
+        this.ball = ball;
+    }
+
+    public int getStrike() {
+        return strike;
+    }
+
+    public void setStrike(int strike) {
+        this.strike = strike;
+    }
+
     public List<Integer> getTarget() {
         return target;
     }
