@@ -67,4 +67,9 @@ public class GameManager {
         return 0;
     }
 
+    public void clearScore(){
+        data.setBall(0);
+        data.setStrike(0);
+    }
+
 }
