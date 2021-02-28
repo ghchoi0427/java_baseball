@@ -3,10 +3,14 @@ package utils;
 import java.util.*;
 
 public class GameManager {
+
+    private final String MESSAGE_INPUT = "input number : ";
+    private String PRINT_SCORE;
+    private final String MESSAGE_CONTINUE = "You got all 3 numbers correct! game set\nif you want to continue enter 1, to terminate enter 2";
     public Data data = new Data();
 
     public void printInput() {
-        System.out.print("input number : ");
+        System.out.print(MESSAGE_INPUT);
     }
 
     public void generateTarget() {
@@ -74,26 +78,25 @@ public class GameManager {
     }
 
     public void printScore() {
-        String line = "";
+        PRINT_SCORE = "";
 
         if (data.getBall() != 0) {
-            line += data.getBall() + "ball ";
+            PRINT_SCORE += data.getBall() + "ball ";
         }
 
         if (data.getStrike() != 0) {
-            line += data.getStrike() + "strike";
+            PRINT_SCORE += data.getStrike() + "strike";
         }
 
         if (data.getStrike() == 0 && data.getBall() == 0) {
-            line += "nothing";
+            PRINT_SCORE += "nothing";
         }
 
-        System.out.println(line);
+        System.out.println(PRINT_SCORE);
     }
 
     public void printGameSet() {
-        System.out.println("You got all 3 numbers correct! game set");
-        System.out.println("if you want to continue enter 1, to terminate enter 2");
+        System.out.println(MESSAGE_CONTINUE);
     }
 
     public void inputCmd(int cmd) {
