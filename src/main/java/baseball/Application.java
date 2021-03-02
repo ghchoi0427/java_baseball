@@ -9,7 +9,6 @@ public class Application {
         final Scanner scanner = new Scanner(System.in);
         // TODO 구현 진행
         GameManager gm = new GameManager();
-        Data data = gm.data;
 
         do {
             gm.generateTarget();
@@ -19,9 +18,9 @@ public class Application {
                 gm.clearScore();
                 gm.setScore();
                 gm.printScore();
-            } while (data.getStrike() != 3);
+            } while (gm.data.getStrike() != 3);
             gm.printGameSet();
             gm.inputCmd(scanner.nextInt());
-        } while (data.getCmd() != 2);
+        } while (gm.data.getCmd() != 2);
     }
 }
