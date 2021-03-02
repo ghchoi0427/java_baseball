@@ -2,7 +2,6 @@ package baseball;
 
 import View.Input;
 import View.Output;
-import utils.Data;
 import utils.GameManager;
 
 import java.util.Scanner;
