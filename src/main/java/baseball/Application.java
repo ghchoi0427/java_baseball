@@ -3,6 +3,7 @@ package baseball;
 import View.Input;
 import View.Output;
 import utils.GameManager;
+import utils.ScoreManager;
 
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ public class Application {
         GameManager gm = new GameManager();
         Input input = new Input(gm);
         Output output = new Output(gm);
+        ScoreManager sm = new ScoreManager(gm);
 
         do {
             gm.generateTarget();
@@ -20,7 +22,7 @@ public class Application {
                 output.printInput();
                 input.inputShot(scanner.nextInt());
                 gm.clearScore();
-                gm.setScore();
+                sm.setScore();
                 output.printScore();
             } while (gm.data.getStrike() != 3);
             output.printGameSet();
