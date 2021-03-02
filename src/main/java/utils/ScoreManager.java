@@ -40,4 +40,9 @@ public class ScoreManager {
         }
         return 0;
     }
+
+    public void clearScore() {
+        gm.data.setBall(0);
+        gm.data.setStrike(0);
+    }
 }

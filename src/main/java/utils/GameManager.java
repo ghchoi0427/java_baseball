@@ -19,8 +19,5 @@ public class GameManager {
         data.setTarget(target);
     }
 
-    public void clearScore() {
-        data.setBall(0);
-        data.setStrike(0);
-    }
+
 }
