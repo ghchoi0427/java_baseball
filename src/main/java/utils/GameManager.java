@@ -4,9 +4,7 @@ import java.util.*;
 
 public class GameManager {
 
-
     public Data data = new Data();
-
 
     public void generateTarget() {
         List<Integer> target = new ArrayList<>();
@@ -18,10 +16,8 @@ public class GameManager {
             } while (target.contains(temp));
             target.add(temp);
         }
-
         data.setTarget(target);
     }
-
 
     public void setScore() {
         List<Integer> shot = data.getShot();
@@ -58,6 +54,4 @@ public class GameManager {
         data.setBall(0);
         data.setStrike(0);
     }
-
-
 }
