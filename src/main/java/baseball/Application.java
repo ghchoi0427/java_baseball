@@ -1,8 +1,10 @@
 package baseball;
 
 import View.Input;
+import View.Output;
 import utils.Data;
 import utils.GameManager;
+
 import java.util.Scanner;
 
 public class Application {
@@ -11,18 +13,19 @@ public class Application {
         // TODO 구현 진행
         GameManager gm = new GameManager();
         Input input = new Input(gm);
+        Output output = new Output(gm);
 
         do {
             gm.generateTarget();
             do {
-                gm.printInput();
+                output.printInput();
                 input.inputShot(scanner.nextInt());
                 gm.clearScore();
                 gm.setScore();
-                gm.printScore();
+                output.printScore();
             } while (gm.data.getStrike() != 3);
-            gm.printGameSet();
-            gm.inputCmd(scanner.nextInt());
+            output.printGameSet();
+            input.inputCmd(scanner.nextInt());
         } while (gm.data.getCmd() != 2);
     }
 }
