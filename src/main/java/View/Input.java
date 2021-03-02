@@ -26,4 +26,11 @@ public class Input {
 
         gm.data.setShot(shot);
     }
+
+    public void inputCmd(int cmd) {
+        if (cmd != 1 && cmd != 2) {
+            throw new IllegalArgumentException();
+        }
+        gm.data.setCmd(cmd);
+    }
 }
