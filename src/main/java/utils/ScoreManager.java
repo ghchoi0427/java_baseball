@@ -18,12 +18,26 @@ public class ScoreManager {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                ball += gm.countBall(target.get(i), i, shot.get(j), j);
-                strike += gm.countStrike(target.get(i), i, shot.get(j), j);
+                ball += countBall(target.get(i), i, shot.get(j), j);
+                strike += countStrike(target.get(i), i, shot.get(j), j);
             }
         }
 
         gm.data.setBall(ball);
         gm.data.setStrike(strike);
+    }
+
+    public int countBall(int target, int targetIdx, int shot, int shotIdx) {
+        if (targetIdx != shotIdx && target == shot) {
+            return 1;
+        }
+        return 0;
+    }
+
+    public int countStrike(int target, int targetIdx, int shot, int shotIdx) {
+        if (targetIdx == shotIdx && target == shot) {
+            return 1;
+        }
+        return 0;
     }
 }

@@ -19,20 +19,6 @@ public class GameManager {
         data.setTarget(target);
     }
 
-    public int countBall(int target, int targetIdx, int shot, int shotIdx) {
-        if (targetIdx != shotIdx && target == shot) {
-            return 1;
-        }
-        return 0;
-    }
-
-    public int countStrike(int target, int targetIdx, int shot, int shotIdx) {
-        if (targetIdx == shotIdx && target == shot) {
-            return 1;
-        }
-        return 0;
-    }
-
     public void clearScore() {
         data.setBall(0);
         data.setStrike(0);
