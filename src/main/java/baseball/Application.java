@@ -12,21 +12,8 @@ public class Application {
         final Scanner scanner = new Scanner(System.in);
         // TODO 구현 진행
         GameManager gm = new GameManager();
-        Input input = new Input(gm);
-        Output output = new Output(gm);
-        ScoreManager sm = new ScoreManager(gm);
+        gm.startGame(scanner);
 
-        do {
-            gm.generateTarget();
-            do {
-                output.printInput();
-                input.inputShot(scanner.nextInt());
-                gm.clearScore();
-                sm.setScore();
-                output.printScore();
-            } while (gm.data.getStrike() != 3);
-            output.printGameSet();
-            input.inputCmd(scanner.nextInt());
-        } while (gm.data.getCmd() != 2);
+
     }
 }
