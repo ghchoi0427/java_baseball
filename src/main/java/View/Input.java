@@ -1,6 +1,7 @@
 package View;
 
 import utils.GameManager;
+import utils.InputValidator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 public class Input {
 
     GameManager gm;
+    InputValidator inputValidator= new InputValidator();
 
     public Input(GameManager gm) {
         this.gm = gm;
@@ -16,10 +18,7 @@ public class Input {
     public void inputShot(int input) {
         List<Integer> shot = new ArrayList<>();
 
-        if ((int) (Math.log10(input) + 1) != 3) {
-            throw new IllegalArgumentException();
-        }
-
+        inputValidator.validateShotInput(input);
         shot.add(input / 100);
         shot.add((input / 10) % 10);
         shot.add(input % 10);
@@ -28,9 +27,7 @@ public class Input {
     }
 
     public void inputCmd(int cmd) {
-        if (cmd != 1 && cmd != 2) {
-            throw new IllegalArgumentException();
-        }
+        inputValidator.validateCmdInput(cmd);
         gm.data.setCmd(cmd);
     }
 }
