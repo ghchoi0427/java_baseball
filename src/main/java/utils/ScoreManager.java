@@ -4,7 +4,12 @@ import java.util.List;
 
 public class ScoreManager {
 
-    GameManager gm = new GameManager();
+    GameManager gm;
+
+    public ScoreManager(GameManager gm) {
+        this.gm = gm;
+    }
+
     public void setScore() {
         List<Integer> shot = gm.data.getShot();
         List<Integer> target = gm.data.getTarget();
