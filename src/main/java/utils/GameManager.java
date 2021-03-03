@@ -14,23 +14,24 @@ public class GameManager {
     TargetShotFactory targetShotFactory = new TargetShotFactory(this);
 
 
-    public void startGame(Scanner scanner){
+    public void startGame(Scanner scanner) {
         do {
             targetShotFactory.generateTarget();
-            do {
-                startInning(scanner);
-            } while (data.getStrike() != 3);
+            startInning(scanner, data);
             output.printGameSet();
             input.inputCmd(scanner.nextInt());
         } while (data.getCmd() != 2);
     }
 
-    public void startInning(Scanner scanner){
-        output.printInput();
-        input.inputShot(scanner.nextInt());
-        sm.clearScore();
-        sm.setScore();
-        output.printScore();
+    public void startInning(Scanner scanner, Data data) {
+
+        while (data.getStrike() != 3) {
+            output.printInput();
+            input.inputShot(scanner.nextInt());
+            sm.clearScore();
+            sm.setScore();
+            output.printScore();
+        }
     }
 
 
