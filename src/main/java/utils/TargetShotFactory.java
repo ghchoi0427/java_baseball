@@ -6,6 +6,7 @@ import java.util.List;
 public class TargetShotFactory {
 
     GameManager gm;
+    InputValidator inputValidator = new InputValidator();
 
     public TargetShotFactory(GameManager gm) {
         this.gm = gm;
@@ -25,10 +26,17 @@ public class TargetShotFactory {
     }
 
     public void generateShot(int input){
-        List<Integer> shot = new ArrayList<>();
-        shot.add(input / 100);
-        shot.add((input / 10) % 10);
-        shot.add(input % 10);
+        List<Integer> shot = intToList(input);
+        inputValidator.validateShotInput(shot);
         gm.data.setShot(shot);
+    }
+
+    public List<Integer> intToList(int input){
+        List<Integer> output = new ArrayList<>();
+        output.add(input / 100);
+        output.add((input / 10) % 10);
+        output.add(input % 10);
+
+        return output;
     }
 }
