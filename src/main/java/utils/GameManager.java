@@ -1,8 +1,6 @@
 package utils;
 
-import View.Input;
-import View.Output;
-
+import View.*;
 import java.util.*;
 
 public class GameManager {
