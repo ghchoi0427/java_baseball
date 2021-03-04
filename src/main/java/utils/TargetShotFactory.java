@@ -13,6 +13,11 @@ public class TargetShotFactory {
     }
 
     public void generateTarget() {
+        List<Integer> target = distinctNums();
+        gm.data.setTarget(target);
+    }
+
+    public List<Integer> distinctNums(){
         List<Integer> target = new ArrayList<>();
         int temp;
 
@@ -22,7 +27,7 @@ public class TargetShotFactory {
             } while (target.contains(temp));
             target.add(temp);
         }
-        gm.data.setTarget(target);
+        return target;
     }
 
     public void generateShot(int input){
