@@ -20,7 +20,7 @@ public class InputValidator {
             throw new IllegalArgumentException(Msg_zeroInput);
         }
 
-        if (inputStream2.mapToLong(e -> 1L).sum() != 3) {
+        if (inputStream2.count() != 3) {
             throw new IllegalArgumentException(Msg_illegalLength);
         }
 
