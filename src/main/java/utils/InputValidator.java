@@ -6,6 +6,11 @@ import java.util.stream.Stream;
 
 public class InputValidator {
 
+    final String Msg_zeroInput = "input shouldn't include zero";
+    final String Msg_illegalLength = "input length should be three";
+    final String Msg_overlap = "all three numbers should be distinct";
+    final String Msg_illegalCommand = "command should be 1 or 2";
+
     public void validateShotInput(List<Integer> input) throws IllegalArgumentException {
         Stream<Integer> inputStream1 = input.stream();
         Stream<Integer> inputStream2 = input.stream();
@@ -13,21 +18,21 @@ public class InputValidator {
         Stream<Integer> inputStream4 = input.stream();
 
         if (inputStream1.anyMatch(n -> n == 0)) {
-            throw new IllegalArgumentException("input shouldn't include zero");
+            throw new IllegalArgumentException(Msg_zeroInput);
         }
 
         if (inputStream2.mapToLong(e -> 1L).sum() != 3) {
-            throw new IllegalArgumentException("input length should be three");
+            throw new IllegalArgumentException(Msg_illegalLength);
         }
 
         if (inputStream3.count() != inputStream4.distinct().count()) {
-            throw new IllegalArgumentException("cannot include overlapped numbers");
+            throw new IllegalArgumentException(Msg_overlap);
         }
     }
 
     public void validateCmdInput(int cmd) throws IllegalArgumentException {
         if (cmd != 1 && cmd != 2) {
-            throw new IllegalArgumentException("command input should be 1 or 2");
+            throw new IllegalArgumentException(Msg_illegalCommand);
         }
     }
 }
