@@ -13,7 +13,6 @@ public class GameManager {
     ScoreManager sm = new ScoreManager(this);
     TargetShotFactory targetShotFactory = new TargetShotFactory(this);
 
-
     public void startGame(Scanner scanner) {
         do {
             targetShotFactory.generateTarget();
@@ -33,6 +32,4 @@ public class GameManager {
             output.printScore();
         }
     }
-
-
 }
