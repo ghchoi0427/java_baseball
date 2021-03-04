@@ -6,17 +6,6 @@ import java.util.stream.Stream;
 
 public class InputValidator {
 
-    public void validateShotInput(int input) throws IllegalArgumentException {
-
-        if ((int) (Math.log10(input) + 1) != 3) {
-            throw new IllegalArgumentException("input length should be 3");
-        }
-
-        if (input < 0) {
-            throw new IllegalArgumentException("input can't be below zero");
-        }
-    }
-
     public void validateShotInput(List<Integer> input) throws IllegalArgumentException {
         Stream<Integer> inputStream1 = input.stream();
         Stream<Integer> inputStream2 = input.stream();
@@ -27,7 +16,7 @@ public class InputValidator {
             throw new IllegalArgumentException("input shouldn't include zero");
         }
 
-        if (inputStream2.mapToLong(e->1L).sum() != 3) {
+        if (inputStream2.mapToLong(e -> 1L).sum() != 3) {
             throw new IllegalArgumentException("input length should be three");
         }
 

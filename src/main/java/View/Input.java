@@ -14,7 +14,6 @@ public class Input {
 
     public void inputShot(int input) {
 
-        inputValidator.validateShotInput(input);
         new TargetShotFactory(gm).generateShot(input);
     }
 
