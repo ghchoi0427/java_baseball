@@ -1,34 +1,35 @@
 package utils;
 
-import Model.Data;
+import Model.ScoreDto;
 import View.*;
+
 import java.util.*;
 
 public class GameManager {
 
-    public Data data = new Data();
-    Input input = new Input(this);
-    Output output = new Output(this);
-    ScoreManager sm = new ScoreManager(this);
-    TargetShotFactory targetShotFactory = new TargetShotFactory(this);
+    private boolean isGameEnd = false;
 
-    public void startGame(Scanner scanner) {
+    public void startGame() {
         do {
-            targetShotFactory.generateTarget();
-            startInning(scanner, data);
-            output.printGameSet();
-            input.inputCmd(scanner.nextInt());
-        } while (data.getCmd() != 2);
+            guessTarget(TargetFactory.generateTarget());
+            Output.printGameSet();
+        } while (Input.inputCmd() != 2);
     }
 
-    public void startInning(Scanner scanner, Data data) {
+    private void guessTarget(List<Integer> target) {
+        do {
+            Output.printInput();
+            ScoreDto score = ScoreManager.countScore(inputShot(), target);
+            Output.printScore(score);
+            setGameEnd(score);
+        } while (!isGameEnd);
+    }
 
-        while (data.getStrike() != 3) {
-            output.printInput();
-            input.inputShot(scanner.nextInt());
-            sm.clearScore();
-            sm.setScore();
-            output.printScore();
-        }
+    private void setGameEnd(ScoreDto score) {
+        isGameEnd = score.isAllCorrect();
+    }
+
+    private List<Integer> inputShot() {
+        return Input.inputShot();
     }
 }
