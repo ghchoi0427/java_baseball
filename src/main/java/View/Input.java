@@ -1,24 +1,20 @@
 package View;
 
-import utils.GameManager;
 import utils.InputValidator;
-import utils.TargetShotFactory;
+import utils.TargetFactory;
+import java.util.List;
+import java.util.Scanner;
 
 public class Input {
+    private static final Scanner scanner = new Scanner(System.in);
 
-    GameManager gm;
-    InputValidator inputValidator= new InputValidator();
-    public Input(GameManager gm) {
-        this.gm = gm;
+    public static List<Integer> inputShot() {
+        return TargetFactory.generateShot(scanner.nextInt());
     }
 
-    public void inputShot(int input) {
-
-        new TargetShotFactory(gm).generateShot(input);
-    }
-
-    public void inputCmd(int cmd) {
-        inputValidator.validateCmdInput(cmd);
-        gm.data.setCmd(cmd);
+    public static int inputCmd() {
+        int cmd = scanner.nextInt();
+        InputValidator.validateCmdInput(cmd);
+        return cmd;
     }
 }
