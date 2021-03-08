@@ -3,25 +3,16 @@ package utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TargetShotFactory {
+public class TargetFactory {
 
-    GameManager gm;
-    InputValidator inputValidator = new InputValidator();
-
-    public TargetShotFactory(GameManager gm) {
-        this.gm = gm;
+    public static List<Integer> generateTarget() {
+        return distinctNums();
     }
 
-    public void generateTarget() {
-        List<Integer> target = distinctNums();
-        gm.data.setTarget(target);
-    }
-
-    public List<Integer> distinctNums(){
+    public static List<Integer> distinctNums(){
         List<Integer> target = new ArrayList<>();
-        int temp;
-
         for (int i = 0; i < 3; i++) {
+            int temp;
             do {
                 temp = RandomUtils.nextInt(1, 9);
             } while (target.contains(temp));
@@ -30,13 +21,13 @@ public class TargetShotFactory {
         return target;
     }
 
-    public void generateShot(int input){
+    public static List<Integer> generateShot(int input){
         List<Integer> shot = intToList(input);
-        inputValidator.validateShotInput(shot);
-        gm.data.setShot(shot);
+        InputValidator.validateShotInput(shot);
+        return shot;
     }
 
-    public List<Integer> intToList(int input){
+    public static List<Integer> intToList(int input){
         List<Integer> output = new ArrayList<>();
         output.add(input / 100);
         output.add((input / 10) % 10);
