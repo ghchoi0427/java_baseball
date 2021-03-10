@@ -1,15 +1,15 @@
 package baseball;
 
 public enum Continue {
-    CONTINUE(1), TERMINATE(2);
+    CONTINUE("1"), TERMINATE("2");
 
-    private final int value;
+    private final String value;
 
-    Continue(int value) {
+    Continue(String value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
