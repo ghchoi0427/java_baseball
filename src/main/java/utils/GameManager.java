@@ -2,6 +2,7 @@ package utils;
 
 import Model.ScoreDto;
 import View.*;
+import baseball.Continue;
 
 import java.util.*;
 
@@ -13,7 +14,7 @@ public class GameManager {
         do {
             guessTarget(TargetFactory.generateTarget());
             Output.printGameSet();
-        } while (Input.inputCmd() != 2);
+        } while (Input.inputCmd() != Continue.TERMINATE);
     }
 
     private void guessTarget(List<Integer> target) {
