@@ -4,7 +4,9 @@ import baseball.Continue;
 import utils.InputValidator;
 import utils.TargetFactory;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Input {
@@ -17,6 +19,9 @@ public class Input {
     public static Continue inputCmd() {
         int cmd = scanner.nextInt();
         InputValidator.validateCmdInput(cmd);
-        return Continue.valueOf(String.valueOf(cmd));
+        return Arrays.stream(Continue.values())
+                .filter(e -> e.getValue() != cmd)
+                .findFirst()
+                .orElseThrow(() -> {throw new NoSuchElementException();});
     }
 }
