@@ -20,8 +20,10 @@ public class Input {
         int cmd = scanner.nextInt();
         InputValidator.validateCmdInput(cmd);
         return Arrays.stream(Continue.values())
-                .filter(e -> e.getValue() != cmd)
+                .filter(e -> e.getValue() == cmd)
                 .findFirst()
-                .orElseThrow(() -> {throw new NoSuchElementException();});
+                .orElseThrow(() -> {
+                    throw new NoSuchElementException();
+                });
     }
 }
